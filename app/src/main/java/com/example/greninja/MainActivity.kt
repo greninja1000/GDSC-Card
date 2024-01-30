@@ -108,7 +108,7 @@ fun MyRow2(){
 
         Text(
             text="Attending Android Camp\n2024",
-            fontSize = 13.sp,
+            fontSize = 15.sp,
             fontWeight = FontWeight.Bold,
             modifier = Modifier.padding(bottom = 16.dp)
 
