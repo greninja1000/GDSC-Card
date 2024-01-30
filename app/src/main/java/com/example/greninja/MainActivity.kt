@@ -1,4 +1,4 @@
-package com.example.compose_2
+package com.example.firstapp
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -21,84 +21,84 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.modifier.modifierLocalMapOf
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.compose_2.ui.theme.Compose_2Theme
-import com.example.compose_2.ui.theme.Purple1
+import com.example.greninja.R
 import com.example.greninja.ui.theme.GRENINJATheme
 import com.example.greninja.ui.theme.Purple1
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContent {
+        setContent{
             GRENINJATheme {
-
-
-
                 MyScreen()
-
             }
         }
     }
 }
 
 @Composable
-fun MyScreen(){
+fun MyScreen() {
+
     Column(
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally,
-        modifier = Modifier.fillMaxSize()
-    ){
+        verticalArrangement =  Arrangement.Center,
+        horizontalAlignment =  Alignment.CenterHorizontally,
+        modifier = Modifier.fillMaxSize())
+    {
 
         Card(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(250.dp)
-                .padding(26.dp),
+                .padding(26.dp)
+                .height(250.dp),
             backgroundColor = Purple1,
             elevation = 10.dp,
             shape = RoundedCornerShape(30.dp)
+
         ){
+            Column(
 
-            Column() {
-                MyRow1()
-                MyRow2()
-
+            ) {
+                Myrow1()
+                Myrow2()
             }
-
         }
     }
 }
 
 @Composable
-fun MyRow1(){
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .padding(8.dp)
-    ){
-
+fun Myrow1(){
+    Row(modifier = Modifier
+        .fillMaxWidth()
+        .padding(16.dp))
+    {
         Text(
-            text="Hii !!\nNandini Sahu",
+            text ="Hii \nGawali&Dube",
             fontSize = 25.sp,
-            fontWeight = FontWeight.Bold,
-            color = Color.White
+            color = Color.Red,
+            fontWeight = FontWeight.ExtraBold
+
+
         )
 
-        Spacer(modifier = Modifier.padding(12.dp))
+        Spacer(modifier = Modifier.padding(16.dp))
 
-        Image(painter = painterResource(id = R.drawable.gdsc_logo) ,
+        Image(painter = painterResource(id = R.drawable.gdsc_logo),
             contentDescription ="gdsc logo" )
+
+
     }
 
 }
 
 @Composable
-fun MyRow2(){
+fun Myrow2(){
     Row (
         verticalAlignment = Alignment.Bottom
     ){
@@ -107,25 +107,19 @@ fun MyRow2(){
             contentDescription ="android logo" )
 
         Text(
-            text="Attending Android Camp\n2024",
-            fontSize = 15.sp,
+            text="Android>>IOS",
+            fontSize = 11.sp,
             fontWeight = FontWeight.Bold,
-            modifier = Modifier.padding(bottom = 16.dp)
-
-        )
+            modifier = Modifier.padding(bottom = 16.dp),
+            color = Color.Red
+            )
 
     }
 }
-
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
     GRENINJATheme {
-
-
-
         MyScreen()
-
-
     }
 }
